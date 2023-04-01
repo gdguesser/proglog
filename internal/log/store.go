@@ -32,8 +32,8 @@ func newStore(f *os.File) (*store, error) {
 
 	return &store{
 		File: f,
-		buf:  &bufio.Writer{},
 		size: size,
+		buf:  bufio.NewWriter(f),
 	}, nil
 }
 
